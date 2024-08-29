@@ -18,5 +18,10 @@ export class CustomerComponent {
     this.customerList.push(this.customer);
     this.customer = new Customer();
   }
+
+  // Handle Errors through Centralized method
+  hasError(typeOfValidator:string, controlName:string): boolean{
+      return this.customer.formCustomerGroup.controls[controlName].hasError(typeOfValidator);
+    }
   
 }
